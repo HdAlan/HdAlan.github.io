@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>萧安的博客</title>
+  
+  <subtitle>为所欲为，耶</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-04-25T14:13:15.033Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>萧安</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>看完视频，做一个简单的三层架构实例吧</title>
+    <link href="http://yoursite.com/2019/04/25/%E7%9C%8B%E5%AE%8C%E8%A7%86%E9%A2%91%EF%BC%8C%E5%81%9A%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%E5%AE%9E%E4%BE%8B%E5%90%A7/"/>
+    <id>http://yoursite.com/2019/04/25/看完视频，做一个简单的三层架构实例吧/</id>
+    <published>2019-04-25T13:59:59.000Z</published>
+    <updated>2019-04-25T14:13:15.033Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;一、三层组成&quot;&gt;&lt;a href=&quot;#一、三层组成&quot; class=&quot;headerlink&quot; title=&quot;一、三层组成&quot;&gt;&lt;/a&gt;一、三层组成&lt;/h2&gt;&lt;p&gt;A.表示层（也称视图层）&lt;br&gt;前台对应于MVC中的View;后台对应于MVC中的Controller，用于控制跳转、调用业务逻辑层Servlet;&lt;br&gt;B.业务逻辑层(Service层)&lt;br&gt;接受表示层的请求;组装数据访问层,进行的操作是逻辑性的&lt;br&gt;C.数据访问层(Dao层)&lt;br&gt;直接访问数据库的操作,原子性的操作(增删改查);
+    
+    </summary>
+    
+      <category term="服务器端开发" scheme="http://yoursite.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+      <category term="JavaWeb" scheme="http://yoursite.com/tags/JavaWeb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于Servlet的MVC模式用户登录实例</title>
+    <link href="http://yoursite.com/2019/04/25/%E5%9F%BA%E4%BA%8EServlet%E7%9A%84MVC%E6%A8%A1%E5%BC%8F%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/"/>
+    <id>http://yoursite.com/2019/04/25/基于Servlet的MVC模式用户登录实例/</id>
+    <published>2019-04-25T13:56:35.000Z</published>
+    <updated>2019-04-25T14:14:01.504Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;一、关于MVC模式的简单解释&quot;&gt;&lt;a href=&quot;#一、关于MVC模式的简单解释&quot; class=&quot;headerlink&quot; title=&quot;一、关于MVC模式的简单解释&quot;&gt;&lt;/a&gt;一、关于MVC模式的简单解释&lt;/h2&gt;&lt;p&gt;M    Model，模型层，例如登录实例中，用于处理登录操作的类；&lt;br&gt;V    View，视图层，用于展示以及与用户交互。使用html、js、css、jsp、jQuery等前端技术实现；&lt;br&gt;C    Controller，控制器，接受视图层的请求，将请求跳转到对应的模型进行处理，模型层处理完毕后，再将结果返回给请求处。这里用Servlet实现控制器。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="服务器端开发" scheme="http://yoursite.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+      <category term="JavaWeb" scheme="http://yoursite.com/tags/JavaWeb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用BottomNavigationView横屏时返回主页</title>
+    <link href="http://yoursite.com/2019/04/25/%E4%BD%BF%E7%94%A8BottomNavigationView%E6%A8%AA%E5%B1%8F%E6%97%B6%E8%BF%94%E5%9B%9E%E4%B8%BB%E9%A1%B5/"/>
+    <id>http://yoursite.com/2019/04/25/使用BottomNavigationView横屏时返回主页/</id>
+    <published>2019-04-25T13:43:25.000Z</published>
+    <updated>2019-04-25T14:18:58.343Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;一、问题导入&quot;&gt;&lt;a href=&quot;#一、问题导入&quot; class=&quot;headerlink&quot; title=&quot;一、问题导入&quot;&gt;&lt;/a&gt;一、问题导入&lt;/h2&gt;&lt;p&gt;如图，“发现”页即为主页，然后我们切换到“我”页，一切正常。
+    
+    </summary>
+    
+      <category term="小App开发" scheme="http://yoursite.com/categories/%E5%B0%8FApp%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/04/25/hello-world/"/>
+    <id>http://yoursite.com/2019/04/25/hello-world/</id>
+    <published>2019-04-25T07:47:40.380Z</published>
+    <updated>2019-04-25T13:14:18.984Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
