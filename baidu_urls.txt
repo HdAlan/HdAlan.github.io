@@ -1,4 +1,4 @@
+https://henuajy.top/2019/04/27/JavaWeb学习之三层架构实例（二）/
 https://henuajy.top/2019/04/25/看完视频，做一个简单的三层架构实例吧/
 https://henuajy.top/2019/04/25/基于Servlet的MVC模式用户登录实例/
 https://henuajy.top/2019/04/25/使用BottomNavigationView横屏时返回主页/
-https://henuajy.top/2019/04/25/hello-world/

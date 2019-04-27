@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://henuajy.top/"/>
-  <updated>2019-04-25T14:13:15.033Z</updated>
+  <updated>2019-04-27T15:45:30.420Z</updated>
   <id>https://henuajy.top/</id>
   
   <author>
@@ -17,19 +17,20 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>看完视频，做一个简单的三层架构实例吧</title>
-    <link href="https://henuajy.top/2019/04/25/%E7%9C%8B%E5%AE%8C%E8%A7%86%E9%A2%91%EF%BC%8C%E5%81%9A%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%E5%AE%9E%E4%BE%8B%E5%90%A7/"/>
-    <id>https://henuajy.top/2019/04/25/看完视频，做一个简单的三层架构实例吧/</id>
-    <published>2019-04-25T13:59:59.000Z</published>
-    <updated>2019-04-25T14:13:15.033Z</updated>
+    <title>JavaWeb学习之三层架构实例（二）</title>
+    <link href="https://henuajy.top/2019/04/27/JavaWeb%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%E5%AE%9E%E4%BE%8B%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>https://henuajy.top/2019/04/27/JavaWeb学习之三层架构实例（二）/</id>
+    <published>2019-04-27T15:36:09.000Z</published>
+    <updated>2019-04-27T15:45:30.420Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;一、三层组成&quot;&gt;&lt;a href=&quot;#一、三层组成&quot; class=&quot;headerlink&quot; title=&quot;一、三层组成&quot;&gt;&lt;/a&gt;一、三层组成&lt;/h2&gt;&lt;p&gt;A.表示层（也称视图层）&lt;br&gt;前台对应于MVC中的View;后台对应于MVC中的Controller，用于控制跳转、调用业务逻辑层Servlet;&lt;br&gt;B.业务逻辑层(Service层)&lt;br&gt;接受表示层的请求;组装数据访问层,进行的操作是逻辑性的&lt;br&gt;C.数据访问层(Dao层)&lt;br&gt;直接访问数据库的操作,原子性的操作(增删改查);
+      &lt;h2 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; title=&quot;引言&quot;&gt;&lt;/a&gt;引言&lt;/h2&gt;&lt;p&gt;这个实例是上一个实例&lt;a&gt;JavaWeb学习 三层架构实例（一）&lt;/a&gt;的加强版，实现的是在前端对数据库中student表的 &lt;em&gt;增&lt;/em&gt;、&lt;em&gt;删&lt;/em&gt;、&lt;em&gt;改&lt;/em&gt;、&lt;em&gt;查&lt;/em&gt; 操作。关于三层组成云云，这里就不再叙述。&lt;/p&gt;
+&lt;h2 id=&quot;实例&quot;&gt;&lt;a href=&quot;#实例&quot; class=&quot;headerlink&quot; title=&quot;实例&quot;&gt;&lt;/a&gt;实例&lt;/h2&gt;&lt;h4 id=&quot;效果图&quot;&gt;&lt;a href=&quot;#效果图&quot; class=&quot;headerlink&quot; title=&quot;效果图&quot;&gt;&lt;/a&gt;效果图&lt;/h4&gt;&lt;p&gt;先来看一下主页，将student表中的数据列出来，这里隐藏了地址信息（saddress）。
     
     </summary>
     
-      <category term="服务器端开发" scheme="https://henuajy.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="Demo" scheme="https://henuajy.top/categories/Demo/"/>
     
     
       <category term="Java" scheme="https://henuajy.top/tags/Java/"/>
@@ -39,11 +40,33 @@
   </entry>
   
   <entry>
-    <title>基于Servlet的MVC模式用户登录实例</title>
+    <title>JavaWeb学习之三层架构实例（一）</title>
+    <link href="https://henuajy.top/2019/04/25/%E7%9C%8B%E5%AE%8C%E8%A7%86%E9%A2%91%EF%BC%8C%E5%81%9A%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%E5%AE%9E%E4%BE%8B%E5%90%A7/"/>
+    <id>https://henuajy.top/2019/04/25/看完视频，做一个简单的三层架构实例吧/</id>
+    <published>2019-04-25T13:59:59.000Z</published>
+    <updated>2019-04-27T15:46:37.535Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;一、三层组成&quot;&gt;&lt;a href=&quot;#一、三层组成&quot; class=&quot;headerlink&quot; title=&quot;一、三层组成&quot;&gt;&lt;/a&gt;一、三层组成&lt;/h2&gt;&lt;p&gt;A.表示层（也称视图层）&lt;br&gt;前台对应于MVC中的View;后台对应于MVC中的Controller，用于控制跳转、调用业务逻辑层Servlet;&lt;br&gt;B.业务逻辑层(Service层)&lt;br&gt;接受表示层的请求;组装数据访问层,进行的操作是逻辑性的&lt;br&gt;C.数据访问层(Dao层)&lt;br&gt;直接访问数据库的操作,原子性的操作(增删改查);
+    
+    </summary>
+    
+      <category term="Demo" scheme="https://henuajy.top/categories/Demo/"/>
+    
+    
+      <category term="Java" scheme="https://henuajy.top/tags/Java/"/>
+    
+      <category term="JavaWeb" scheme="https://henuajy.top/tags/JavaWeb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaWeb学习 MVC模式登录实例</title>
     <link href="https://henuajy.top/2019/04/25/%E5%9F%BA%E4%BA%8EServlet%E7%9A%84MVC%E6%A8%A1%E5%BC%8F%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E5%AE%9E%E4%BE%8B/"/>
     <id>https://henuajy.top/2019/04/25/基于Servlet的MVC模式用户登录实例/</id>
     <published>2019-04-25T13:56:35.000Z</published>
-    <updated>2019-04-25T14:14:01.504Z</updated>
+    <updated>2019-04-27T09:15:10.792Z</updated>
     
     <summary type="html">
     
@@ -51,7 +74,7 @@
     
     </summary>
     
-      <category term="服务器端开发" scheme="https://henuajy.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+      <category term="Demo" scheme="https://henuajy.top/categories/Demo/"/>
     
     
       <category term="Java" scheme="https://henuajy.top/tags/Java/"/>
@@ -65,7 +88,7 @@
     <link href="https://henuajy.top/2019/04/25/%E4%BD%BF%E7%94%A8BottomNavigationView%E6%A8%AA%E5%B1%8F%E6%97%B6%E8%BF%94%E5%9B%9E%E4%B8%BB%E9%A1%B5/"/>
     <id>https://henuajy.top/2019/04/25/使用BottomNavigationView横屏时返回主页/</id>
     <published>2019-04-25T13:43:25.000Z</published>
-    <updated>2019-04-25T14:18:58.343Z</updated>
+    <updated>2019-04-27T08:48:18.183Z</updated>
     
     <summary type="html">
     
@@ -73,28 +96,12 @@
     
     </summary>
     
-      <category term="小App开发" scheme="https://henuajy.top/categories/%E5%B0%8FApp%E5%BC%80%E5%8F%91/"/>
+      <category term="BUG" scheme="https://henuajy.top/categories/BUG/"/>
     
     
       <category term="Android" scheme="https://henuajy.top/tags/Android/"/>
     
       <category term="Java" scheme="https://henuajy.top/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://henuajy.top/2019/04/25/hello-world/"/>
-    <id>https://henuajy.top/2019/04/25/hello-world/</id>
-    <published>2019-04-25T07:47:40.380Z</published>
-    <updated>2019-04-25T13:14:18.984Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can
-    
-    </summary>
-    
     
   </entry>
   
