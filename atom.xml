@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://henuajy.top/"/>
-  <updated>2019-04-28T07:38:11.266Z</updated>
+  <updated>2019-05-12T05:37:26.292Z</updated>
   <id>https://henuajy.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二叉树的层序遍历</title>
+    <link href="https://henuajy.top/2019/05/12/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
+    <id>https://henuajy.top/2019/05/12/二叉树的层序遍历/</id>
+    <published>2019-05-12T05:15:39.000Z</published>
+    <updated>2019-05-12T05:37:26.292Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;二叉树的层序遍历&quot;&gt;&lt;a href=&quot;#二叉树的层序遍历&quot; class=&quot;headerlink&quot; title=&quot;二叉树的层序遍历&quot;&gt;&lt;/a&gt;二叉树的层序遍历&lt;/h2&gt;&lt;p&gt;再网上搜索到的结果好多都是队列+while循环实现的，这里将while循环替换为递归。&lt;/p&gt;
+&lt;h3 id=&quot;层序遍历&quot;&gt;&lt;a href=&quot;#层序遍历&quot; class=&quot;headerlink&quot; title=&quot;层序遍历&quot;&gt;&lt;/a&gt;层序遍历&lt;/h3&gt;&lt;p&gt;规则是：若树为空，则空操作返回，否则从树的第一层，也就是根结点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点逐个访问。如图：
+    
+    </summary>
+    
+      <category term="Test" scheme="https://henuajy.top/categories/Test/"/>
+    
+    
+      <category term="数据结构" scheme="https://henuajy.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="C++" scheme="https://henuajy.top/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaWeb学习之三层架构实例（三）</title>
@@ -122,9 +145,9 @@
       <category term="BUG" scheme="https://henuajy.top/categories/BUG/"/>
     
     
-      <category term="Android" scheme="https://henuajy.top/tags/Android/"/>
-    
       <category term="Java" scheme="https://henuajy.top/tags/Java/"/>
+    
+      <category term="Android" scheme="https://henuajy.top/tags/Android/"/>
     
   </entry>
   

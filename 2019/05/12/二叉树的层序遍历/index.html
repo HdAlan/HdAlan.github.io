@@ -94,14 +94,20 @@
 
 
 
-  <meta name="keywords" content="Prodigal">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Prodigal&#39;Blog">
-<meta property="og:url" content="https://henuajy.top/tags/JavaWeb/index.html">
+  <meta name="description" content="二叉树的层序遍历再网上搜索到的结果好多都是队列+while循环实现的，这里将while循环替换为递归。 层序遍历规则是：若树为空，则空操作返回，否则从树的第一层，也就是根结点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点逐个访问。如图：">
+<meta name="keywords" content="数据结构,C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二叉树的层序遍历">
+<meta property="og:url" content="https://henuajy.top/2019/05/12/二叉树的层序遍历/index.html">
 <meta property="og:site_name" content="Prodigal&#39;Blog">
+<meta property="og:description" content="二叉树的层序遍历再网上搜索到的结果好多都是队列+while循环实现的，这里将while循环替换为递归。 层序遍历规则是：若树为空，则空操作返回，否则从树的第一层，也就是根结点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点逐个访问。如图：">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://raw.githubusercontent.com/HdAlan/myBlogImages/master/OutTreeInOrder.jpg">
+<meta property="og:updated_time" content="2019-05-12T05:37:26.292Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Prodigal&#39;Blog">
+<meta name="twitter:title" content="二叉树的层序遍历">
+<meta name="twitter:description" content="二叉树的层序遍历再网上搜索到的结果好多都是队列+while循环实现的，这里将while循环替换为递归。 层序遍历规则是：若树为空，则空操作返回，否则从树的第一层，也就是根结点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点逐个访问。如图：">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/HdAlan/myBlogImages/master/OutTreeInOrder.jpg">
 
 
 
@@ -111,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="https://henuajy.top/tags/JavaWeb/">
+  <link rel="canonical" href="https://henuajy.top/2019/05/12/二叉树的层序遍历/">
 
 
 
@@ -121,7 +127,7 @@
   };
 </script>
 
-  <title>Tag: JavaWeb | Prodigal'Blog</title>
+  <title>二叉树的层序遍历 | Prodigal'Blog</title>
   
 
 
@@ -169,7 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -230,7 +236,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -348,158 +354,245 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>JavaWeb<small>Tag</small>
-        </h2>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://henuajy.top/2019/05/12/二叉树的层序遍历/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Prodigal">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Prodigal'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/04/28/JavaWeb学习之三层架构实例（三）/" itemprop="url">
-            
-              <span itemprop="name">JavaWeb学习之三层架构实例（三）</span>
-            
-          </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">二叉树的层序遍历
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-28T15:37:00+08:00" content="2019-04-28">
-          04-28
-        </time>
-      </div>
+              
+            
+          </h2>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-12 13:15:39 / Modified: 13:37:26" itemprop="dateCreated datePublished" datetime="2019-05-12T13:15:39+08:00">2019-05-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Test/" itemprop="url" rel="index"><span itemprop="name">Test</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2019/05/12/二叉树的层序遍历/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/12/二叉树的层序遍历/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+		 
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/27/JavaWeb学习之三层架构实例（二）/" itemprop="url">
-            
-              <span itemprop="name">JavaWeb学习之三层架构实例（二）</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-27T23:36:09+08:00" content="2019-04-27">
-          04-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/25/JavaWeb学习之三层架构实例（一）/" itemprop="url">
-            
-              <span itemprop="name">JavaWeb学习之三层架构实例（一）</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-25T21:59:59+08:00" content="2019-04-25">
-          04-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/25/基于Servlet的MVC模式用户登录实例/" itemprop="url">
-            
-              <span itemprop="name">JavaWeb学习 MVC模式登录实例</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-25T21:56:35+08:00" content="2019-04-25">
-          04-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h2 id="二叉树的层序遍历"><a href="#二叉树的层序遍历" class="headerlink" title="二叉树的层序遍历"></a>二叉树的层序遍历</h2><p>再网上搜索到的结果好多都是队列+while循环实现的，这里将while循环替换为递归。</p>
+<h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><p>规则是：若树为空，则空操作返回，否则从树的第一层，也就是根结点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点逐个访问。如图： <a id="more"></a><br><img src="https://raw.githubusercontent.com/HdAlan/myBlogImages/master/OutTreeInOrder.jpg" alt="Avartar">  </p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//模拟队列</span></span><br><span class="line">BiTree TreeQueue[<span class="number">1024</span>];<span class="comment">//队列</span></span><br><span class="line"><span class="keyword">int</span> front = <span class="number">0</span>;<span class="comment">//队头指针</span></span><br><span class="line"><span class="keyword">int</span> rear = <span class="number">0</span>;<span class="comment">//队尾指针</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LevelOrderTraverse</span><span class="params">(BiTree T)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (T) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; T-&gt;data &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">		<span class="keyword">if</span> (T-&gt;lchild) &#123;</span><br><span class="line">			TreeQueue[rear] = T-&gt;lchild;</span><br><span class="line">			rear++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (T-&gt;rchild) &#123;</span><br><span class="line">			TreeQueue[rear] = T-&gt;rchild;</span><br><span class="line">			rear++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (front != rear) &#123;</span><br><span class="line">			LevelOrderTraverse(TreeQueue[front++]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
 
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Prodigal</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    
+    <a href="https://henuajy.top/2019/05/12/二叉树的层序遍历/" title="二叉树的层序遍历">https://henuajy.top/2019/05/12/二叉树的层序遍历/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+            <a href="/tags/C/" rel="tag"># C++</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/28/JavaWeb学习之三层架构实例（三）/" rel="next" title="JavaWeb学习之三层架构实例（三）">
+                <i class="fa fa-chevron-left"></i> JavaWeb学习之三层架构实例（三）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -519,8 +612,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -658,6 +760,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的层序遍历"><span class="nav-text">二叉树的层序遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#层序遍历"><span class="nav-text">层序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-text">代码实现</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -784,6 +903,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -829,6 +952,8 @@
 
 
 
+
+  
 
 
   
