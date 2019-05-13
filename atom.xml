@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://henuajy.top/"/>
-  <updated>2019-05-12T05:37:26.292Z</updated>
+  <updated>2019-05-13T03:38:51.326Z</updated>
   <id>https://henuajy.top/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>广播接收器——接收系统广播</title>
+    <link href="https://henuajy.top/2019/05/13/%E5%B9%BF%E6%92%AD%E6%8E%A5%E6%94%B6%E5%99%A8/"/>
+    <id>https://henuajy.top/2019/05/13/广播接收器/</id>
+    <published>2019-05-13T01:36:03.000Z</published>
+    <updated>2019-05-13T03:38:51.326Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;一、分类&quot;&gt;&lt;a href=&quot;#一、分类&quot; class=&quot;headerlink&quot; title=&quot;一、分类&quot;&gt;&lt;/a&gt;一、分类&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;标准广播&lt;/strong&gt;&lt;br&gt;是一种完全异步执行的广播，在广播发出后，所有的广播接收器几乎会在同一时刻接受到这条广播消息，没有任何顺序而言。这种广播效率比较高，但是无法被截断。&lt;br&gt;&lt;strong&gt;有序广播&lt;/strong&gt;&lt;br&gt;是一种同步执行的广播，在广播发出后，同一时刻只会有一个广播接收器能够收到这条广播消息，当这个广播接收器中的逻辑执行完毕后，广播才会继续传递。显而易见，这类广播是有先后顺序的，优先级高的广播接收器就可以先收到广播消息，并且前边的广播接收器可以截断正在传递的广播。
+    
+    </summary>
+    
+      <category term="Demo" scheme="https://henuajy.top/categories/Demo/"/>
+    
+    
+      <category term="Android" scheme="https://henuajy.top/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
     <title>二叉树的层序遍历</title>
     <link href="https://henuajy.top/2019/05/12/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
     <id>https://henuajy.top/2019/05/12/二叉树的层序遍历/</id>
     <published>2019-05-12T05:15:39.000Z</published>
-    <updated>2019-05-12T05:37:26.292Z</updated>
+    <updated>2019-05-13T01:09:31.920Z</updated>
     
     <summary type="html">
     
@@ -145,9 +165,9 @@
       <category term="BUG" scheme="https://henuajy.top/categories/BUG/"/>
     
     
-      <category term="Java" scheme="https://henuajy.top/tags/Java/"/>
-    
       <category term="Android" scheme="https://henuajy.top/tags/Android/"/>
+    
+      <category term="Java" scheme="https://henuajy.top/tags/Java/"/>
     
   </entry>
   

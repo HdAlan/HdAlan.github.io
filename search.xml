@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[广播接收器——接收系统广播]]></title>
+    <url>%2F2019%2F05%2F13%2F%E5%B9%BF%E6%92%AD%E6%8E%A5%E6%94%B6%E5%99%A8%2F</url>
+    <content type="text"><![CDATA[一、分类标准广播是一种完全异步执行的广播，在广播发出后，所有的广播接收器几乎会在同一时刻接受到这条广播消息，没有任何顺序而言。这种广播效率比较高，但是无法被截断。有序广播是一种同步执行的广播，在广播发出后，同一时刻只会有一个广播接收器能够收到这条广播消息，当这个广播接收器中的逻辑执行完毕后，广播才会继续传递。显而易见，这类广播是有先后顺序的，优先级高的广播接收器就可以先收到广播消息，并且前边的广播接收器可以截断正在传递的广播。 二、接收系统广播就以监听网络变化为例吧！ 步骤1、声明网络权限1&lt;use-permission android:name="android.permission.ACCESS_NETWORK_STATE"/&gt; 2、创建一个类NetworkChangeReceiver继承自BroadcastReceiver。3、创建一个IntentFilter实例，并为其添加一个值为android.net.conn.CONNECTIVITY_CHANGE的action。4、创建NetworkChangeReceiver的实例，然后调用registerReceiver()方法进行注册，同时传入NetworkChangeReceiver的实例和IntentFilter的实例。5、最后不要忘记取消注册广播接收器（因为此广播接收器为动态注册的）。 代码123456789101112131415161718192021222324252627282930313233343536373839404142434445package com.henuajy.broadcasttest;import android.content.BroadcastReceiver;import android.content.Context;import android.content.Intent;import android.content.IntentFilter;import android.support.v4.content.LocalBroadcastManager;import android.support.v7.app.AppCompatActivity;import android.os.Bundle;import android.view.View;import android.widget.Button;import android.widget.Toast;public class MainActivity extends AppCompatActivity &#123; private IntentFilter intentFilter; private NetworkChangeReceiver netWorkChangeReceiver; @Override protected void onCreate(Bundle savedInstanceState) &#123; super.onCreate(savedInstanceState); setContentView(R.layout.activity_main); intentFilter = new IntentFilter(); intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE"); netWorkChangeReceiver = new NetworkChangeReceiver(); registerReceiver(netWorkChangeReceiver,intentFilter); &#125; @Override protected void onDestroy() &#123; super.onDestroy(); unregisterReceiver(netWorkChangeReceiver); &#125; class NetworkChangeReceiver extends BroadcastReceiver&#123; @Override public void onReceive(Context context, Intent intent) &#123; Toast.makeText(context,"network chages",Toast.LENGTH_SHORT).show(); &#125; &#125;&#125; 注意Android系统为了保护用户设备的安全和隐私，做了严格的规定：如果程序需要进行一些对用户来书比较敏感的操作，就必须在配置文件中声明权限才可以，否则程序会直接崩溃。比如这里访问系统的网络状态就是需要声明权限的。]]></content>
+      <categories>
+        <category>Demo</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[二叉树的层序遍历]]></title>
     <url>%2F2019%2F05%2F12%2F%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86%2F</url>
     <content type="text"><![CDATA[二叉树的层序遍历再网上搜索到的结果好多都是队列+while循环实现的，这里将while循环替换为递归。 层序遍历规则是：若树为空，则空操作返回，否则从树的第一层，也就是根结点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点逐个访问。如图： 代码实现1234567891011121314151617181920212223//模拟队列BiTree TreeQueue[1024];//队列int front = 0;//队头指针int rear = 0;//队尾指针int LevelOrderTraverse(BiTree T) &#123; if (T) &#123; cout &lt;&lt; T-&gt;data &lt;&lt; " "; if (T-&gt;lchild) &#123; TreeQueue[rear] = T-&gt;lchild; rear++; &#125; if (T-&gt;rchild) &#123; TreeQueue[rear] = T-&gt;rchild; rear++; &#125; if (front != rear) &#123; LevelOrderTraverse(TreeQueue[front++]); &#125; &#125;&#125;]]></content>
@@ -68,8 +79,8 @@
         <category>BUG</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>Android</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
 </search>
