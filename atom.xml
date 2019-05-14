@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://henuajy.top/"/>
-  <updated>2019-05-13T03:38:51.326Z</updated>
+  <updated>2019-05-14T23:21:59.319Z</updated>
   <id>https://henuajy.top/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>广播接收器--发送自定义广播</title>
+    <link href="https://henuajy.top/2019/05/15/%E5%B9%BF%E6%92%AD%E6%8E%A5%E6%94%B6%E5%99%A8-%E5%8F%91%E9%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B9%BF%E6%92%AD/"/>
+    <id>https://henuajy.top/2019/05/15/广播接收器-发送自定义广播/</id>
+    <published>2019-05-14T23:20:37.000Z</published>
+    <updated>2019-05-14T23:21:59.319Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;一、发送标准广播&quot;&gt;&lt;a href=&quot;#一、发送标准广播&quot; class=&quot;headerlink&quot; title=&quot;一、发送标准广播&quot;&gt;&lt;/a&gt;一、发送标准广播&lt;/h3&gt;&lt;p&gt;1、首先要定义一个广播接收器MyBroadcastReceiver，继承BroadcastReceiver&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;package&lt;/span&gt; com.henuajy.broadcasttest;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; android.content.BroadcastReceiver;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; android.content.Context;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; android.content.Intent;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; android.widget.Toast;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;MyBroadcastReceiver&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;BroadcastReceiver&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onReceive&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Context context, Intent intent)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//收到广播后要执行的逻辑&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Demo" scheme="https://henuajy.top/categories/Demo/"/>
+    
+    
+      <category term="Android" scheme="https://henuajy.top/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
     <title>广播接收器——接收系统广播</title>
-    <link href="https://henuajy.top/2019/05/13/%E5%B9%BF%E6%92%AD%E6%8E%A5%E6%94%B6%E5%99%A8/"/>
-    <id>https://henuajy.top/2019/05/13/广播接收器/</id>
+    <link href="https://henuajy.top/2019/05/13/%E5%B9%BF%E6%92%AD%E6%8E%A5%E6%94%B6%E5%99%A8--%E6%8E%A5%E6%94%B6%E7%B3%BB%E7%BB%9F%E5%B9%BF%E6%92%AD/"/>
+    <id>https://henuajy.top/2019/05/13/广播接收器--接收系统广播/</id>
     <published>2019-05-13T01:36:03.000Z</published>
-    <updated>2019-05-13T03:38:51.326Z</updated>
+    <updated>2019-05-14T00:26:06.416Z</updated>
     
     <summary type="html">
     

@@ -238,7 +238,7 @@
         
   
     <h1 class="title">
-      <a href="/2019/05/13/广播接收器/">
+      <a href="/2019/05/13/广播接收器--接收系统广播/">
         广播接收器——接收系统广播
       </a>
     </h1>
@@ -321,11 +321,16 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           <h3 id="一、分类"><a href="#一、分类" class="headerlink" title="一、分类"></a>一、分类</h3><p><strong>标准广播</strong><br>是一种完全异步执行的广播，在广播发出后，所有的广播接收器几乎会在同一时刻接受到这条广播消息，没有任何顺序而言。这种广播效率比较高，但是无法被截断。<br><strong>有序广播</strong><br>是一种同步执行的广播，在广播发出后，同一时刻只会有一个广播接收器能够收到这条广播消息，当这个广播接收器中的逻辑执行完毕后，广播才会继续传递。显而易见，这类广播是有先后顺序的，优先级高的广播接收器就可以先收到广播消息，并且前边的广播接收器可以截断正在传递的广播。<a id="more"></a>  </p>
-<h3 id="二、接收系统广播"><a href="#二、接收系统广播" class="headerlink" title="二、接收系统广播"></a>二、接收系统广播</h3><p>就以监听网络变化为例吧！</p>
-<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><p>1、声明网络权限<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">use-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_NETWORK_STATE"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="二、动态注册接收系统广播"><a href="#二、动态注册接收系统广播" class="headerlink" title="二、动态注册接收系统广播"></a>二、动态注册接收系统广播</h3><p>就以监听网络变化为例吧！</p>
+<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><p>1、声明网络权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;use-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
 <p>2、创建一个类NetworkChangeReceiver继承自BroadcastReceiver。<br>3、创建一个IntentFilter实例，并为其添加一个值为<strong>android.net.conn.CONNECTIVITY_CHANGE</strong>的action。<br>4、创建NetworkChangeReceiver的实例，然后调用registerReceiver()方法进行注册，同时传入NetworkChangeReceiver的实例和IntentFilter的实例。<br>5、最后不要忘记取消注册广播接收器（因为此广播接收器为动态注册的）。  </p>
 <h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.henuajy.broadcasttest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.content.BroadcastReceiver;</span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"><span class="keyword">import</span> android.content.Intent;</span><br><span class="line"><span class="keyword">import</span> android.content.IntentFilter;</span><br><span class="line"><span class="keyword">import</span> android.support.v4.content.LocalBroadcastManager;</span><br><span class="line"><span class="keyword">import</span> android.support.v7.app.AppCompatActivity;</span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"><span class="keyword">import</span> android.widget.Button;</span><br><span class="line"><span class="keyword">import</span> android.widget.Toast;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> IntentFilter intentFilter;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> NetworkChangeReceiver netWorkChangeReceiver;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        intentFilter = <span class="keyword">new</span> IntentFilter();</span><br><span class="line">        intentFilter.addAction(<span class="string">"android.net.conn.CONNECTIVITY_CHANGE"</span>);</span><br><span class="line">        netWorkChangeReceiver = <span class="keyword">new</span> NetworkChangeReceiver();</span><br><span class="line">        registerReceiver(netWorkChangeReceiver,intentFilter);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onDestroy();</span><br><span class="line">        unregisterReceiver(netWorkChangeReceiver);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">NetworkChangeReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</span><br><span class="line">            Toast.makeText(context,<span class="string">"network chages"</span>,Toast.LENGTH_SHORT).show();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>Android系统为了保护用户设备的安全和隐私，做了严格的规定：如果程序需要进行一些对用户来书比较敏感的操作，就必须在配置文件中声明权限才可以，否则程序会直接崩溃。比如这里访问系统的网络状态就是需要声明权限的。</p>
+<h3 id="三、静态注册接收系统广播"><a href="#三、静态注册接收系统广播" class="headerlink" title="三、静态注册接收系统广播"></a>三、静态注册接收系统广播</h3><p>仍然以监听系统网络状态为例  </p>
+<h4 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤"></a>步骤</h4><p>1、新建一个类NetworkChangeReceiver，继承BroadcastReceiver并重写onReceive()方法；<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.henuajy.notificationtest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.content.BroadcastReceiver;</span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"><span class="keyword">import</span> android.content.Intent;</span><br><span class="line"><span class="keyword">import</span> android.widget.Toast;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NetworkChangeReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//网络状态发生变化的逻辑</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2、在配置文件中的manifest标签下声明网络权限；<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.ACCESS_NETWORK_STATE"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>3、在配置文件中的application标签下添加receiver并添加action–“android.net.conn.CONNECTIVITY_CHANGE”；<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">receiver</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:name</span>=<span class="string">".NetworkStateReceiver"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:enabled</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:exported</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.net.conn.CONNECTIVITY_CHANGE"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">receiver</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>Android系统为了保护用户设备的安全和隐私，做了严格的规定：如果程序需要进行一些对用户来书比较敏感的操作，就必须在配置文件中声明权限才可以，否则程序会直接崩溃。比如这里访问系统的网络状态就是需要声明权限的。</p>
+<h3 id="小补充"><a href="#小补充" class="headerlink" title="小补充"></a>小补充</h3><p>如果想要判断网络状态是开启还是关闭，可用下列方法：<br>1、通过getSystemService()【由于是关于网络状态的，所以要传入参数Context.CONNECTIVITY_SERVICE】方法获取ConnectionManager类的实例manager；<br>2、通过调用manager的getActiveNetworkInfo()方法获取NetworkInfo类的实例info；<br>3、通过info的isAvailable()【返回bool值】方法判断网络是否可用。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ConnectionManager manager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);</span><br><span class="line">NetworkInfo info = manager.getActiveNetworkInfo();</span><br><span class="line"><span class="keyword">if</span>(info!=<span class="keyword">null</span>&amp;&amp;info.isAvailable())&#123;</span><br><span class="line">	<span class="comment">//网络可用的逻辑</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="comment">//网络不可用的逻辑</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
         </div>
         
@@ -337,10 +342,10 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-05-13T11:38:51+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-05-14T08:26:06+08:00">
   <a class="notlink">
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年5月13日</p>
+    <p>最后更新于 2019年5月14日</p>
   </a>
 </div>
 
@@ -360,7 +365,7 @@
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=https://henuajy.top/2019/05/13/广播接收器/&title=广播接收器——接收系统广播 | Prodigal'Blog&summary=一、分类标准广播是一种完全异步执行的广播，在广播发出后，所有的广播接收器几乎会在同一时刻接受到这条广播消息，没有任何顺序而言。这种广播效率比较高，但是无法被截断。有序广播是一种同步执行的广播，在广播发出后，同一时刻只会有一个广播接收器能够收到这条广播消息，当这个广播接收器中的逻辑执行完毕后，广播才会继续传递。显而易见，这类广播是有先后顺序的，优先级高的广播接收器就可以先收到广播消息，并且前边的广播接收器可以截断正在传递的广播。">
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=https://henuajy.top/2019/05/13/广播接收器--接收系统广播/&title=广播接收器——接收系统广播 | Prodigal'Blog&summary=一、分类标准广播是一种完全异步执行的广播，在广播发出后，所有的广播接收器几乎会在同一时刻接受到这条广播消息，没有任何顺序而言。这种广播效率比较高，但是无法被截断。有序广播是一种同步执行的广播，在广播发出后，同一时刻只会有一个广播接收器能够收到这条广播消息，当这个广播接收器中的逻辑执行完毕后，广播才会继续传递。显而易见，这类广播是有先后顺序的，优先级高的广播接收器就可以先收到广播消息，并且前边的广播接收器可以截断正在传递的广播。">
           
             <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
           
@@ -368,7 +373,7 @@
       
     
       
-        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://henuajy.top/2019/05/13/广播接收器/&title=广播接收器——接收系统广播 | Prodigal'Blog&summary=一、分类标准广播是一种完全异步执行的广播，在广播发出后，所有的广播接收器几乎会在同一时刻接受到这条广播消息，没有任何顺序而言。这种广播效率比较高，但是无法被截断。有序广播是一种同步执行的广播，在广播发出后，同一时刻只会有一个广播接收器能够收到这条广播消息，当这个广播接收器中的逻辑执行完毕后，广播才会继续传递。显而易见，这类广播是有先后顺序的，优先级高的广播接收器就可以先收到广播消息，并且前边的广播接收器可以截断正在传递的广播。">
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://henuajy.top/2019/05/13/广播接收器--接收系统广播/&title=广播接收器——接收系统广播 | Prodigal'Blog&summary=一、分类标准广播是一种完全异步执行的广播，在广播发出后，所有的广播接收器几乎会在同一时刻接受到这条广播消息，没有任何顺序而言。这种广播效率比较高，但是无法被截断。有序广播是一种同步执行的广播，在广播发出后，同一时刻只会有一个广播接收器能够收到这条广播消息，当这个广播接收器中的逻辑执行完毕后，广播才会继续传递。显而易见，这类广播是有先后顺序的，优先级高的广播接收器就可以先收到广播消息，并且前边的广播接收器可以截断正在传递的广播。">
           
             <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
           
@@ -376,7 +381,7 @@
       
     
       
-        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=https://henuajy.top/2019/05/13/广播接收器/&title=广播接收器——接收系统广播 | Prodigal'Blog&summary=一、分类标准广播是一种完全异步执行的广播，在广播发出后，所有的广播接收器几乎会在同一时刻接受到这条广播消息，没有任何顺序而言。这种广播效率比较高，但是无法被截断。有序广播是一种同步执行的广播，在广播发出后，同一时刻只会有一个广播接收器能够收到这条广播消息，当这个广播接收器中的逻辑执行完毕后，广播才会继续传递。显而易见，这类广播是有先后顺序的，优先级高的广播接收器就可以先收到广播消息，并且前边的广播接收器可以截断正在传递的广播。">
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=https://henuajy.top/2019/05/13/广播接收器--接收系统广播/&title=广播接收器——接收系统广播 | Prodigal'Blog&summary=一、分类标准广播是一种完全异步执行的广播，在广播发出后，所有的广播接收器几乎会在同一时刻接受到这条广播消息，没有任何顺序而言。这种广播效率比较高，但是无法被截断。有序广播是一种同步执行的广播，在广播发出后，同一时刻只会有一个广播接收器能够收到这条广播消息，当这个广播接收器中的逻辑执行完毕后，广播才会继续传递。显而易见，这类广播是有先后顺序的，优先级高的广播接收器就可以先收到广播消息，并且前边的广播接收器可以截断正在传递的广播。">
           
             <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
           
@@ -397,6 +402,25 @@
         
         
             <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                            <h4>
+                                <a href="/2019/05/15/广播接收器-发送自定义广播/" rel="prev" title="广播接收器--发送自定义广播">
+                                  
+                                      广播接收器--发送自定义广播
+                                  
+                                </a>
+                            </h4>
+                            
+                                
+                                <h6 class="tags">
+                                    <a class="tag" href="/tags/Android/"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>Android</a>
+                                </h6>
+                            
+                        </span>
+                    </section>
                 
                 
                     <section class="next">
@@ -528,7 +552,7 @@
 </header>
 
     <div class="content pure">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、分类"><span class="toc-text">一、分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、接收系统广播"><span class="toc-text">二、接收系统广播</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#步骤"><span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意"><span class="toc-text">注意</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、分类"><span class="toc-text">一、分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、动态注册接收系统广播"><span class="toc-text">二、动态注册接收系统广播</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#步骤"><span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、静态注册接收系统广播"><span class="toc-text">三、静态注册接收系统广播</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#步骤-1"><span class="toc-text">步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意"><span class="toc-text">注意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小补充"><span class="toc-text">小补充</span></a></li></ol>
     </div>
   </section>
 
@@ -617,7 +641,7 @@
         
           <li><a class="flat-box" title="/categories/BUG/" href="/categories/BUG/"><div class="name">BUG</div><div class="badge">(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Demo/" href="/categories/Demo/"><div class="name">Demo</div><div class="badge">(5)</div></a></li>
+          <li><a class="flat-box" title="/categories/Demo/" href="/categories/Demo/"><div class="name">Demo</div><div class="badge">(6)</div></a></li>
         
           <li><a class="flat-box" title="/categories/Test/" href="/categories/Test/"><div class="name">Test</div><div class="badge">(1)</div></a></li>
         
