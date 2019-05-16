@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://henuajy.top/"/>
-  <updated>2019-05-16T13:22:52.556Z</updated>
+  <updated>2019-05-16T13:24:38.679Z</updated>
   <id>https://henuajy.top/</id>
   
   <author>
@@ -21,17 +21,12 @@
     <link href="https://henuajy.top/2019/05/16/Android%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8/"/>
     <id>https://henuajy.top/2019/05/16/Android中的文件存储/</id>
     <published>2019-05-16T13:21:34.000Z</published>
-    <updated>2019-05-16T13:22:52.556Z</updated>
+    <updated>2019-05-16T13:24:38.679Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h3 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h3&gt;&lt;p&gt;文件存储时Android中最基本的一种数据存储方式，它不对存储的内容进行任何的格式化处理，所有数据都是原封不动地保存到文件当中的，因此它比较适合用于存储一些简单的文本数据或二进制数据。&lt;/p&gt;
+&lt;h3 id=&quot;二、将数据存储到文件中&quot;&gt;&lt;a href=&quot;#二、将数据存储到文件中&quot; class=&quot;headerlink&quot; title=&quot;二、将数据存储到文件中&quot;&gt;&lt;/a&gt;二、将数据存储到文件中&lt;/h3&gt;&lt;p&gt;Context类中提供了一个openFileOutput()方法，可以用于将数据存储到指定的文件中。
     
     </summary>
     
