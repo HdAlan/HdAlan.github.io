@@ -322,7 +322,7 @@
         <div class="article-entry" itemprop="articleBody">
           <h2 id="二叉树的层序遍历"><a href="#二叉树的层序遍历" class="headerlink" title="二叉树的层序遍历"></a>二叉树的层序遍历</h2><p>再网上搜索到的结果好多都是队列+while循环实现的，这里将while循环替换为递归。</p>
 <h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><p>规则是：若树为空，则空操作返回，否则从树的第一层，也就是根结点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点逐个访问。如图： <a id="more"></a> </p>
-<p><fancybox><br><img src="https://raw.githubusercontent.com/HdAlan/myBlogImages/master/OutTreeInOrder.jpg" alt="Avartar"><br></fancybox></p>
+<p><fancybox><br><img src="https://raw.githubusercontent.com/HdAlan/myBlogImages/master/%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86%E4%BA%8C%E5%8F%89%E6%A0%91/OutTreeInOrder.jpg" alt="Avartar"><br></fancybox></p>
 <h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//模拟队列</span></span><br><span class="line">BiTree TreeQueue[<span class="number">1024</span>];<span class="comment">//队列</span></span><br><span class="line"><span class="keyword">int</span> front = <span class="number">0</span>;<span class="comment">//队头指针</span></span><br><span class="line"><span class="keyword">int</span> rear = <span class="number">0</span>;<span class="comment">//队尾指针</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LevelOrderTraverse</span><span class="params">(BiTree T)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (T) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; T-&gt;data &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">		<span class="keyword">if</span> (T-&gt;lchild) &#123;</span><br><span class="line">			TreeQueue[rear] = T-&gt;lchild;</span><br><span class="line">			rear++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (T-&gt;rchild) &#123;</span><br><span class="line">			TreeQueue[rear] = T-&gt;rchild;</span><br><span class="line">			rear++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (front != rear) &#123;</span><br><span class="line">			LevelOrderTraverse(TreeQueue[front++]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
@@ -335,10 +335,10 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-05-13T09:09:31+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-05-16T16:13:06+08:00">
   <a class="notlink">
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>最后更新于 2019年5月13日</p>
+    <p>最后更新于 2019年5月16日</p>
   </a>
 </div>
 
