@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://henuajy.top/"/>
-  <updated>2019-05-14T23:21:59.319Z</updated>
+  <updated>2019-05-16T13:22:52.556Z</updated>
   <id>https://henuajy.top/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Android中的文件存储</title>
+    <link href="https://henuajy.top/2019/05/16/Android%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8/"/>
+    <id>https://henuajy.top/2019/05/16/Android中的文件存储/</id>
+    <published>2019-05-16T13:21:34.000Z</published>
+    <updated>2019-05-16T13:22:52.556Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Notes" scheme="https://henuajy.top/categories/Notes/"/>
+    
+    
+      <category term="Android" scheme="https://henuajy.top/tags/Android/"/>
+    
+      <category term="Java" scheme="https://henuajy.top/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>广播接收器--发送自定义广播</title>
     <link href="https://henuajy.top/2019/05/15/%E5%B9%BF%E6%92%AD%E6%8E%A5%E6%94%B6%E5%99%A8-%E5%8F%91%E9%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B9%BF%E6%92%AD/"/>
     <id>https://henuajy.top/2019/05/15/广播接收器-发送自定义广播/</id>
     <published>2019-05-14T23:20:37.000Z</published>
-    <updated>2019-05-14T23:21:59.319Z</updated>
+    <updated>2019-05-16T13:21:59.856Z</updated>
     
     <summary type="html">
     
@@ -34,6 +62,8 @@
     
       <category term="Android" scheme="https://henuajy.top/tags/Android/"/>
     
+      <category term="Java" scheme="https://henuajy.top/tags/Java/"/>
+    
   </entry>
   
   <entry>
@@ -41,7 +71,7 @@
     <link href="https://henuajy.top/2019/05/13/%E5%B9%BF%E6%92%AD%E6%8E%A5%E6%94%B6%E5%99%A8--%E6%8E%A5%E6%94%B6%E7%B3%BB%E7%BB%9F%E5%B9%BF%E6%92%AD/"/>
     <id>https://henuajy.top/2019/05/13/广播接收器--接收系统广播/</id>
     <published>2019-05-13T01:36:03.000Z</published>
-    <updated>2019-05-14T00:26:06.416Z</updated>
+    <updated>2019-05-16T13:22:02.430Z</updated>
     
     <summary type="html">
     
@@ -53,6 +83,8 @@
     
     
       <category term="Android" scheme="https://henuajy.top/tags/Android/"/>
+    
+      <category term="Java" scheme="https://henuajy.top/tags/Java/"/>
     
   </entry>
   
@@ -185,9 +217,9 @@
       <category term="BUG" scheme="https://henuajy.top/categories/BUG/"/>
     
     
-      <category term="Java" scheme="https://henuajy.top/tags/Java/"/>
-    
       <category term="Android" scheme="https://henuajy.top/tags/Android/"/>
+    
+      <category term="Java" scheme="https://henuajy.top/tags/Java/"/>
     
   </entry>
   
