@@ -192,8 +192,8 @@
       
         
   <h2 class="title">
-    <a href="/2019/05/12/二叉树的层序遍历/">
-      二叉树的层序遍历
+    <a href="/2019/04/25/基于Servlet的MVC模式用户登录实例/">
+      JavaWeb学习 MVC模式登录实例
     </a>
   </h2>
 
@@ -221,114 +221,7 @@
             <div class="new-meta-item date">
   <a class="notlink">
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-05-12</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class="new-meta-item category">
-    <a href="/categories/Test/" rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>Test</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h2 id="二叉树的层序遍历"><a href="#二叉树的层序遍历" class="headerlink" title="二叉树的层序遍历"></a>二叉树的层序遍历</h2><p>再网上搜索到的结果好多都是队列+while循环实现的，这里将while循环替换为递归。</p>
-<h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><p>规则是：若树为空，则空操作返回，否则从树的第一层，也就是根结点开始访问，从上而下逐层遍历，在同一层中，按从左到右的顺序对结点逐个访问。如图：
-      
-        <div class="readmore">
-          <a href="/2019/05/12/二叉树的层序遍历/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </p></div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/数据结构/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>数据结构</a>
-        
-          <a href="/tags/C/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>C++</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class="post-wrapper">
-            <article class="post reveal ">
-  
-
-
-  <section class="meta">
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/04/28/JavaWeb学习之三层架构实例（三）/">
-      JavaWeb学习之三层架构实例（三）
-    </a>
-  </h2>
-
-
-      
-      <div class="new-meta-box">
-        
-          
-        
-          
-            
-  <div class="new-meta-item author">
-    <a href="https://henuajy.top" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Prodigal</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class="notlink">
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-04-28</p>
+    <p>2019-04-25</p>
   </a>
 </div>
 
@@ -367,11 +260,10 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>通过上一篇博客<a href="https://henuajy.top/2019/04/27/JavaWeb%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%E5%AE%9E%E4%BE%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">JavaWeb学习之三层架构实例（二）</a>我们基本上已经实现了对学生信息列表的增删改查操作（UI除外），但是不难看出，代码冗余度太高了，尤其是<strong>StudentDao</strong>这个类，其中的增删改查四个方法，同样都要连接数据库、获取statement等等。为此，我又对这个项目进行了有点点优化。</p>
-<h2 id="优化日志"><a href="#优化日志" class="headerlink" title="优化日志"></a>优化日志</h2><p>1、增加了两个接口 <strong>IStudentDao.java</strong> 、 <strong>IStudentService.java</strong> ；<br>2、 <strong>StudentDao.java</strong> 和 <strong>StudentService.java</strong> 分别实现以上两个接口，并加入Impl后缀；<br>3、 增加一个数据库帮助类 <strong>DBUtil.java</strong>，目的是简化Dao层代码量；
+      <h2 id="一、关于MVC模式的简单解释"><a href="#一、关于MVC模式的简单解释" class="headerlink" title="一、关于MVC模式的简单解释"></a>一、关于MVC模式的简单解释</h2><p>M    Model，模型层，例如登录实例中，用于处理登录操作的类；<br>V    View，视图层，用于展示以及与用户交互。使用html、js、css、jsp、jQuery等前端技术实现；<br>C    Controller，控制器，接受视图层的请求，将请求跳转到对应的模型进行处理，模型层处理完毕后，再将结果返回给请求处。这里用Servlet实现控制器。<br>
       
         <div class="readmore">
-          <a href="/2019/04/28/JavaWeb学习之三层架构实例（三）/" class="flat-box">
+          <a href="/2019/04/25/基于Servlet的MVC模式用户登录实例/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -384,6 +276,112 @@
           <a href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Java</a>
         
           <a href="/tags/JavaWeb/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>JavaWeb</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class="post-wrapper">
+            <article class="post reveal ">
+  
+
+
+  <section class="meta">
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2019/04/25/使用BottomNavigationView横屏时返回主页/">
+      使用BottomNavigationView横屏时返回主页
+    </a>
+  </h2>
+
+
+      
+      <div class="new-meta-box">
+        
+          
+        
+          
+            
+  <div class="new-meta-item author">
+    <a href="https://henuajy.top" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Prodigal</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-04-25</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item category">
+    <a href="/categories/BUG/" rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>BUG</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="一、问题导入"><a href="#一、问题导入" class="headerlink" title="一、问题导入"></a>一、问题导入</h2><p>如图，“发现”页即为主页，然后我们切换到“我”页，一切正常。
+      
+        <div class="readmore">
+          <a href="/2019/04/25/使用BottomNavigationView横屏时返回主页/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </p></div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/Android/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Android</a>
+        
+          <a href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Java</a>
         
       </div>
     
@@ -408,14 +406,8 @@
             </a>
           
           <p class="current">
-            3 / 5
+            3 / 3
           </p>
-          
-            <a class="next" rel="next" href="/page/4/">
-              <section class="post next">
-                &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-              </section>
-            </a>
           
         </div>
       </div>
