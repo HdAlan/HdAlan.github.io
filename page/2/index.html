@@ -192,6 +192,218 @@
       
         
   <h2 class="title">
+    <a href="/2019/05/15/广播接收器-发送自定义广播/">
+      广播接收器--发送自定义广播
+    </a>
+  </h2>
+
+
+      
+      <div class="new-meta-box">
+        
+          
+        
+          
+            
+  <div class="new-meta-item author">
+    <a href="https://henuajy.top" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Prodigal</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-05-15</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item category">
+    <a href="/categories/Demo/" rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>Demo</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h3 id="一、发送标准广播"><a href="#一、发送标准广播" class="headerlink" title="一、发送标准广播"></a>一、发送标准广播</h3><p>1、首先要定义一个广播接收器MyBroadcastReceiver，继承BroadcastReceiver<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.henuajy.broadcasttest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.content.BroadcastReceiver;</span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"><span class="keyword">import</span> android.content.Intent;</span><br><span class="line"><span class="keyword">import</span> android.widget.Toast;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyBroadcastReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//收到广播后要执行的逻辑</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+      
+        <div class="readmore">
+          <a href="/2019/05/15/广播接收器-发送自定义广播/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/Android/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Android</a>
+        
+          <a href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Java</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class="post-wrapper">
+            <article class="post reveal ">
+  
+
+
+  <section class="meta">
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2019/05/13/广播接收器--接收系统广播/">
+      广播接收器——接收系统广播
+    </a>
+  </h2>
+
+
+      
+      <div class="new-meta-box">
+        
+          
+        
+          
+            
+  <div class="new-meta-item author">
+    <a href="https://henuajy.top" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Prodigal</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-05-13</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item category">
+    <a href="/categories/Demo/" rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>Demo</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h3 id="一、分类"><a href="#一、分类" class="headerlink" title="一、分类"></a>一、分类</h3><p><strong>标准广播</strong><br>是一种完全异步执行的广播，在广播发出后，所有的广播接收器几乎会在同一时刻接受到这条广播消息，没有任何顺序而言。这种广播效率比较高，但是无法被截断。<br><strong>有序广播</strong><br>是一种同步执行的广播，在广播发出后，同一时刻只会有一个广播接收器能够收到这条广播消息，当这个广播接收器中的逻辑执行完毕后，广播才会继续传递。显而易见，这类广播是有先后顺序的，优先级高的广播接收器就可以先收到广播消息，并且前边的广播接收器可以截断正在传递的广播。
+      
+        <div class="readmore">
+          <a href="/2019/05/13/广播接收器--接收系统广播/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </p></div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/Android/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Android</a>
+        
+          <a href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Java</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class="post-wrapper">
+            <article class="post reveal ">
+  
+
+
+  <section class="meta">
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
     <a href="/2019/05/12/二叉树的层序遍历/">
       二叉树的层序遍历
     </a>
@@ -274,9 +486,9 @@
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/数据结构/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>数据结构</a>
-        
           <a href="/tags/C/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>C++</a>
+        
+          <a href="/tags/数据结构/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>数据结构</a>
         
       </div>
     
@@ -372,219 +584,6 @@
       
         <div class="readmore">
           <a href="/2019/04/28/JavaWeb学习之三层架构实例（三）/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </p></div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Java</a>
-        
-          <a href="/tags/JavaWeb/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>JavaWeb</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class="post-wrapper">
-            <article class="post reveal ">
-  
-
-
-  <section class="meta">
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/04/27/JavaWeb学习之三层架构实例（二）/">
-      JavaWeb学习之三层架构实例（二）
-    </a>
-  </h2>
-
-
-      
-      <div class="new-meta-box">
-        
-          
-        
-          
-            
-  <div class="new-meta-item author">
-    <a href="https://henuajy.top" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Prodigal</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class="notlink">
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-04-27</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class="new-meta-item category">
-    <a href="/categories/Demo/" rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>Demo</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>这个实例是上一个实例<a href="https://henuajy.top/2019/04/25/JavaWeb%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%E5%AE%9E%E4%BE%8B%EF%BC%88%E4%B8%80%EF%BC%89/">JavaWeb学习 三层架构实例（一）</a>的加强版，实现的是在前端对数据库中student表的 <em>增</em>、<em>删</em>、<em>改</em>、<em>查</em> 操作。关于三层组成云云，这里就不再叙述。</p>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h4 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h4><p>先来看一下主页，将student表中的数据列出来，这里隐藏了地址信息（saddress）。
-      
-        <div class="readmore">
-          <a href="/2019/04/27/JavaWeb学习之三层架构实例（二）/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </p></div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Java</a>
-        
-          <a href="/tags/JavaWeb/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>JavaWeb</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class="post-wrapper">
-            <article class="post reveal ">
-  
-
-
-  <section class="meta">
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/04/25/JavaWeb学习之三层架构实例（一）/">
-      JavaWeb学习之三层架构实例（一）
-    </a>
-  </h2>
-
-
-      
-      <div class="new-meta-box">
-        
-          
-        
-          
-            
-  <div class="new-meta-item author">
-    <a href="https://henuajy.top" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Prodigal</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class="notlink">
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-04-25</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class="new-meta-item category">
-    <a href="/categories/Demo/" rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>Demo</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h2 id="一、三层组成"><a href="#一、三层组成" class="headerlink" title="一、三层组成"></a>一、三层组成</h2><p>A.表示层（也称视图层）<br>前台对应于MVC中的View;后台对应于MVC中的Controller，用于控制跳转、调用业务逻辑层Servlet;<br>B.业务逻辑层(Service层)<br>接受表示层的请求;组装数据访问层,进行的操作是逻辑性的<br>C.数据访问层(Dao层)<br>直接访问数据库的操作,原子性的操作(增删改查);
-      
-        <div class="readmore">
-          <a href="/2019/04/25/JavaWeb学习之三层架构实例（一）/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
@@ -783,7 +782,7 @@
         
           <li><a class="flat-box" title="/categories/Demo/" href="/categories/Demo/"><div class="name">Demo</div><div class="badge">(7)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Notes/" href="/categories/Notes/"><div class="name">Notes</div><div class="badge">(1)</div></a></li>
+          <li><a class="flat-box" title="/categories/Notes/" href="/categories/Notes/"><div class="name">Notes</div><div class="badge">(3)</div></a></li>
         
           <li><a class="flat-box" title="/categories/Test/" href="/categories/Test/"><div class="name">Test</div><div class="badge">(1)</div></a></li>
         
@@ -810,7 +809,7 @@
 </header>
 
     <div class="content pure">
-      <a href="/tags/Android/" style="font-size: 20.67px; color: #6c6c6c">Android</a> <a href="/tags/C/" style="font-size: 14px; color: #999">C++</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/JavaWeb/" style="font-size: 17.33px; color: #828282">JavaWeb</a> <a href="/tags/OkHttp/" style="font-size: 14px; color: #999">OkHttp</a> <a href="/tags/Servlet/" style="font-size: 14px; color: #999">Servlet</a> <a href="/tags/数据结构/" style="font-size: 14px; color: #999">数据结构</a>
+      <a href="/tags/Android/" style="font-size: 21.5px; color: #666">Android</a> <a href="/tags/C/" style="font-size: 16.5px; color: #888">C++</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/JavaWeb/" style="font-size: 19px; color: #777">JavaWeb</a> <a href="/tags/OkHttp/" style="font-size: 14px; color: #999">OkHttp</a> <a href="/tags/Servlet/" style="font-size: 14px; color: #999">Servlet</a> <a href="/tags/数据存储/" style="font-size: 16.5px; color: #888">数据存储</a> <a href="/tags/数据结构/" style="font-size: 16.5px; color: #888">数据结构</a>
     </div>
   </section>
 
