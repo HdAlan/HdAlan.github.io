@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Commons组件实现文件上传与下载]]></title>
+    <url>%2F2019%2F09%2F04%2FCommons%E7%BB%84%E4%BB%B6%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8E%E4%B8%8B%E8%BD%BD%2F</url>
+    <content type="text"><![CDATA[一、文件上传所需jar包首先是commons-fileupload.jar包其次是commons-IO.jar包前者的使用依赖后者，两者缺一不可 实现前台要求 在前台提交的form表单请求方式必须为:post,编码类型需设置为:multipart/form-data 后台实现 123456789101112131415161718192021222324protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123; request.setCharacterEncoding("utf-8"); response.setCharacterEncoding("utf-8"); response.setContentType("text/html;charset=utf-8"); try &#123; boolean isMultipart = ServletFileUpload.isMultipartContent(request); if(isMultipart) &#123;//判断前台请求form表单的编码类型是否为multipart/form-data FileItemFactory factory = new DiskFileItemFactory(); ServletFileUpload upload = new ServletFileUpload(factory); List&lt;FileItem&gt; items = upload.parseRequest(request);//解析请求,获取form表单所提交的每一项 for(FileItem item:items) &#123; if(!item.isFormField()) &#123;//判断是否为普通form表单项,若不普通，则认为是文件，进行上传操作 String fileName = item.getName();//获取文件名 String path = "D:\\MyDevelope\\ServerFiles";//设置文件在服务器中的存储路径 File file = new File(path,fileName); item.write(file);//将文件写入指定路径 &#125; &#125; &#125; &#125;catch (Exception e) &#123; e.printStackTrace(); &#125;&#125; 二、文件下载于文件上传所不同的是，文件下载不需要导包，但是他需要解决中文乱码问题 解决中文乱码对于Firefox、opera、chrome，可以将content-Disposition消息头设置为： 12response.addHeader("content-Disposition","attachment;filename==?UTF-8?B?"+new String(Base64.encodeBase64(fileName.getBytes("UTF-8")))+"?="); 而对于edge，则需要将content-Disposition消息头设置为： 12response.addHeader("content-Disposition","attachment;filename="+URLEncoder.encode(fileName,"UTF-8")); 获取客户端浏览器类型可以使用12request.getHeader("User-Agent"); 获取包含浏览器类型的消息头，接下来使用String的contains()方法即可判断客户端是否为某种类型 实现12345678910111213141516171819202122232425262728293031323334protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123; request.setCharacterEncoding("utf-8"); response.setCharacterEncoding("utf-8"); response.addHeader("content-Type", "application/octet-stream");//设置下载的文件的MIME类型 String fileName = request.getParameter("fileName"); String path = "D:\\MyDevelope\\ServerFiles\\";//设置要下载的文件在服务器中的目录 /** *解析浏览器类型，设置不同的“content-Disposition”消息头来解决中文乱码问题 */ String agent = request.getHeader("User-Agent").toLowerCase(); String contentDisposition = "attachement;filename="+fileName; System.out.println(agent); if(agent.contains("edge")) &#123; System.out.println("edge"); contentDisposition = "attachment;filename="+URLEncoder.encode(fileName,"UTF-8"); &#125;else if(agent.contains("firefox")||agent.contains("opr")||agent.contains("chrome")) &#123; contentDisposition = "attachment;filename==?UTF-8?B?"+new String(Base64.encodeBase64(fileName.getBytes("UTF-8")))+"?="; &#125; response.addHeader("content-Disposition",contentDisposition); //InputStream in = getServletContext().getResourceAsStream(path+fileName);//此种方式只能下载项目根目录中的文件 /** * 通过IO操作将文件输出给用户 */ InputStream in = new FileInputStream(path+fileName); ServletOutputStream out = response.getOutputStream(); byte[] bs = new byte[10]; int len = -1; while((len=in.read(bs))!=-1) &#123; out.write(bs,0,bs.length); &#125; out.close(); in.close(); &#125;]]></content>
+      <categories>
+        <category>Demo</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>JavaWeb</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[二叉排序树]]></title>
     <url>%2F2019%2F06%2F12%2F%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91%2F</url>
     <content type="text"><![CDATA[一、定义二叉排序树又称作二叉查找树，它是一种对排序和查找都很有用的特殊二叉树。二叉排序树或者是一棵空树，或者是具有下列性质的二叉树：(1)若它的左子树不空,则左子树上所有结点的值均小于它的根结点的值;(2)若它的右子树不空,则右子树上所有结点的值均大于它的根结点的值;(3)它的左、右子树也分别为二叉排序树.由以上定义可得出:中序遍历一棵二叉树时可以得到一个结点值递增的有序序列 二、二叉排序树的创建、查找、插入1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980//-----------二叉排序树的二叉链表存储形式-------------------typedef int KeyType,InfoType;//数据元素定义typedef struct&#123; KeyType key; //关键字域 InfoType otherinfo; //其他域&#125; ElemType;//结点typedef struct BSTNode&#123; ElemType data; struct BSTNode *lchild,*rchild;//左右子树&#125; BSTNode,*BSTree;//插入二叉排序树void InsertBST(BSTree &amp;T,ElemType e)&#123; if(!T) &#123; BSTree S = new BSTNode; S-&gt;data = e; S-&gt;lchild=S-&gt;rchild=NULL; T=S; &#125; else if(T-&gt;data.key&gt;e.key) &#123; InsertBST(T-&gt;lchild,e); &#125; else if(T-&gt;data.key&lt;e.key) &#123; InsertBST(T-&gt;rchild,e); &#125;&#125;#define ENDFLAG 0//创建二叉排序树void CreateBSTree(BSTree &amp;T)&#123; ElemType e; T=NULL; cout &lt;&lt; "输入key和value,0结束" &lt;&lt; endl; cin &gt;&gt; e.key &gt;&gt; e.otherinfo; int i = 0; while(e.key!=ENDFLAG) &#123; i++; InsertBST(T,e); cin &gt;&gt; e.key &gt;&gt; e.otherinfo; &#125; cout &lt;&lt; "创建成功，共有" &lt;&lt; i &lt;&lt; "个元素" &lt;&lt; endl;&#125;//查找二叉排序树ElemType SearchBST(BSTree T,KeyType key)&#123; if(T) &#123; if(T-&gt;data.key==key) &#123; return T-&gt;data; &#125; else if(T-&gt;data.key&gt;key) &#123; return SearchBST(T-&gt;lchild,key); &#125; else if(T-&gt;data.key&lt;key) &#123; return SearchBST(T-&gt;rchild,key); &#125; &#125; else &#123; ElemType e; e.key=-1; return e; &#125;&#125;]]></content>
@@ -8,8 +20,8 @@
         <category>Notes</category>
       </categories>
       <tags>
-        <tag>C++</tag>
         <tag>数据结构</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -84,8 +96,8 @@
         <category>Test</category>
       </categories>
       <tags>
-        <tag>C++</tag>
         <tag>数据结构</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>

@@ -192,6 +192,113 @@
       
         
   <h2 class="title">
+    <a href="/2019/04/28/JavaWeb学习之三层架构实例（三）/">
+      JavaWeb学习之三层架构实例（三）
+    </a>
+  </h2>
+
+
+      
+      <div class="new-meta-box">
+        
+          
+        
+          
+            
+  <div class="new-meta-item author">
+    <a href="https://henuajy.top" rel="nofollow">
+      
+        <i class="fas fa-user" aria-hidden="true"></i>
+      
+      <p>Prodigal</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class="notlink">
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2019-04-28</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item category">
+    <a href="/categories/Demo/" rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>Demo</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>通过上一篇博客<a href="https://henuajy.top/2019/04/27/JavaWeb%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%E5%AE%9E%E4%BE%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">JavaWeb学习之三层架构实例（二）</a>我们基本上已经实现了对学生信息列表的增删改查操作（UI除外），但是不难看出，代码冗余度太高了，尤其是<strong>StudentDao</strong>这个类，其中的增删改查四个方法，同样都要连接数据库、获取statement等等。为此，我又对这个项目进行了有点点优化。</p>
+<h2 id="优化日志"><a href="#优化日志" class="headerlink" title="优化日志"></a>优化日志</h2><p>1、增加了两个接口 <strong>IStudentDao.java</strong> 、 <strong>IStudentService.java</strong> ；<br>2、 <strong>StudentDao.java</strong> 和 <strong>StudentService.java</strong> 分别实现以上两个接口，并加入Impl后缀；<br>3、 增加一个数据库帮助类 <strong>DBUtil.java</strong>，目的是简化Dao层代码量；
+      
+        <div class="readmore">
+          <a href="/2019/04/28/JavaWeb学习之三层架构实例（三）/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </p></div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Java</a>
+        
+          <a href="/tags/JavaWeb/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>JavaWeb</a>
+        
+      </div>
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class="post-wrapper">
+            <article class="post reveal ">
+  
+
+
+  <section class="meta">
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
     <a href="/2019/04/27/JavaWeb学习之三层架构实例（二）/">
       JavaWeb学习之三层架构实例（二）
     </a>
@@ -498,112 +605,6 @@
           </div>
         
       
-        
-          <div class="post-wrapper">
-            <article class="post reveal ">
-  
-
-
-  <section class="meta">
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/04/25/使用BottomNavigationView横屏时返回主页/">
-      使用BottomNavigationView横屏时返回主页
-    </a>
-  </h2>
-
-
-      
-      <div class="new-meta-box">
-        
-          
-        
-          
-            
-  <div class="new-meta-item author">
-    <a href="https://henuajy.top" rel="nofollow">
-      
-        <i class="fas fa-user" aria-hidden="true"></i>
-      
-      <p>Prodigal</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class="notlink">
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-04-25</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  
-  <div class="new-meta-item category">
-    <a href="/categories/BUG/" rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>BUG</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <h2 id="一、问题导入"><a href="#一、问题导入" class="headerlink" title="一、问题导入"></a>一、问题导入</h2><p>如图，“发现”页即为主页，然后我们切换到“我”页，一切正常。
-      
-        <div class="readmore">
-          <a href="/2019/04/25/使用BottomNavigationView横屏时返回主页/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </p></div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/Android/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Android</a>
-        
-          <a href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Java</a>
-        
-      </div>
-    
-  </section>
-</article>
-
-          </div>
-        
-      
     
   </section>
   
@@ -619,8 +620,14 @@
             </a>
           
           <p class="current">
-            3 / 3
+            3 / 4
           </p>
+          
+            <a class="next" rel="next" href="/page/4/">
+              <section class="post next">
+                &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </section>
+            </a>
           
         </div>
       </div>
@@ -773,7 +780,7 @@
         
           <li><a class="flat-box" title="/categories/BUG/" href="/categories/BUG/"><div class="name">BUG</div><div class="badge">(1)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/Demo/" href="/categories/Demo/"><div class="name">Demo</div><div class="badge">(7)</div></a></li>
+          <li><a class="flat-box" title="/categories/Demo/" href="/categories/Demo/"><div class="name">Demo</div><div class="badge">(8)</div></a></li>
         
           <li><a class="flat-box" title="/categories/Notes/" href="/categories/Notes/"><div class="name">Notes</div><div class="badge">(3)</div></a></li>
         
